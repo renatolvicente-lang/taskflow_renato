@@ -4,7 +4,8 @@ $total = $pdo->query('SELECT COUNT(*) FROM tarefas')->fetchColumn();
 $andamento = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE status='Em andamento'")->fetchColumn();
 $concluidas = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE status='Concluido'")->fetchColumn(); 
 $abertos = $pdo->query("SELECT COUNT(*) FROM chamados WHERE status='Aberto'")->fetchColumn();
-$prioritarias = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE prioridade IN ('Média','Alta')")->fetchColumn();
+//linha corrigida
+$prioritarias = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE prioridade IN ('Alta')")->fetchColumn();
 $recentes = $pdo->query('SELECT * FROM tarefas ORDER BY id DESC LIMIT 5')->fetchAll();
 require 'includes/header.php'; ?><div class="head">
     <div>
