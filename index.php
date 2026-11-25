@@ -2,7 +2,8 @@
 $pageTitle = 'Dashboard';
 $total = $pdo->query('SELECT COUNT(*) FROM tarefas')->fetchColumn();
 $andamento = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE status='Em andamento'")->fetchColumn();
-$concluidas = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE status='Concluido'")->fetchColumn(); 
+//linha corrigida
+$concluidas = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE status='Concluída'")->fetchColumn(); 
 $abertos = $pdo->query("SELECT COUNT(*) FROM chamados WHERE status='Aberto'")->fetchColumn();
 //linha corrigida
 $prioritarias = $pdo->query("SELECT COUNT(*) FROM tarefas WHERE prioridade IN ('Alta')")->fetchColumn();
