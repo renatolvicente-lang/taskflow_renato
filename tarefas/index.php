@@ -42,8 +42,10 @@ require '../includes/header.php'; ?>
                     <td><?= date('d/m/Y', strtotime($t['prazo'])) ?></td>
                     <td><?= $t['prioridade'] ?></td>
                     <td><?= $t['status'] ?></td>
-                    <td><a class="btn gray" href="form.php?id=<?= $t['id'] ?>">Editar</a> <a class="btn red"
-                            href="excluir.php?id=<?= $t['id'] ?>">Excluir</a></td>
+                    <td><a class="btn gray" href="form.php?id=<?= $t['id'] ?>">Editar</a> 
+                   <!-- linha corrigida -->
+                    <button onclick="return confirm('Realmente deseja excluir?')" style="border: 0; background-color: white;"><a class="btn red" href="excluir.php?id=<?= $t['id'] ?>">Excluir</a></button>
+                    </td>
                 </tr><?php endforeach; ?>
         </table>
     </div>
